@@ -1,0 +1,22 @@
+{
+  "name": "scss-empty-selectors-cleaner",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "start": "bun run src/index.ts",
+    "build": "bun build src/index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "fast-glob": "^3.3.2",
+    "inquirer": "^12.1.0",
+    "postcss": "^8.4.49",
+    "postcss-scss": "^4.0.9"
+  }
+}
