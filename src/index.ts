@@ -85,7 +85,7 @@ async function processScssFile(
   backupsEnabled: boolean
 ): Promise<RemovalInfo[]> {
   const content = fs.readFileSync(filePath, "utf-8");
-  const ast: Root = postcss.parse(content, { syntax: scss, from: filePath });
+  const ast: Root = scss.parse(content, { from: filePath });
 
   const removals: RemovalInfo[] = [];
 
@@ -199,5 +199,5 @@ async function main() {
 }
 
 main().catch((error) => {
-  error("An error occurred:", error);
+  console.error("An error occurred:", error);
 });
