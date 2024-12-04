@@ -177,3 +177,7 @@ dist
 # Test files
 *.css
 *.scss
+
+# Executables, release files
+
+*.exe
