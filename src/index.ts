@@ -27,10 +27,8 @@ async function getDirectory(): Promise<string> {
     },
   ]);
 
-  let targetDir: string;
-
   if (hasScss) {
-    targetDir = process.cwd();
+    return process.cwd();
   } else {
     const { dir } = await inquirer.prompt([
       {
@@ -45,10 +43,8 @@ async function getDirectory(): Promise<string> {
         },
       },
     ]);
-    targetDir = path.resolve(dir);
+    return path.resolve(dir);
   }
-
-  return targetDir;
 }
 
 async function getOptions(): Promise<{
@@ -98,6 +94,7 @@ async function processScssFile(
       const hasDeclarations = rule.nodes?.some(
         (child) => child.type === "decl" && child.value.trim() !== ""
       );
+
       const hasNestedRules = rule.nodes?.some(
         (child) => child.type === "rule" || child.type === "atrule"
       );
@@ -158,7 +155,6 @@ async function main() {
   const { backupsEnabled, loggingEnabled } = await getOptions();
 
   log(`\n🔍 Searching for .scss files in: ${targetDir}`, loggingEnabled);
-
   const scssFiles = await findScssFiles(targetDir);
 
   if (scssFiles.length === 0) {
