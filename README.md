@@ -30,50 +30,50 @@
 ## Feature: scss-refactor-transitions
 ### Before Usage:
   
-      ```scss
-      
-      // file.scss
-      .button {
-        background: #a7ef6f;
-        border-radius: 8px;
-        transition: all 0.15s;
-        cursor: pointer;
-      
-        &:hover {
-          opacity: 0.7;
-          background-color: red;
-        }
-      
-        &:disabled {
-          background: green;
-          cursor: not-allowed;
-          color: white;
-        }
-      }
-      ```
+  ```scss
+  
+  // file.scss
+  .button {
+    background: #a7ef6f;
+    border-radius: 8px;
+    transition: all 0.15s;
+    cursor: pointer;
+  
+    &:hover {
+      opacity: 0.7;
+      background-color: red;
+    }
+  
+    &:disabled {
+      background: green;
+      cursor: not-allowed;
+      color: white;
+    }
+  }
+  ```
       
    ### After Usage:
       
-      ```scss
-      // file.scss
-      .button {
-        background: #a7ef6f;
-        border-radius: 8px;
-        transition: background-color 0.15s, color 0.15s, opacity 0.15s;
-        cursor: pointer;
-      
-        &:hover {
-          opacity: 0.7;
-          background-color: red;
-        }
-      
-        &:disabled {
-          background: green;
-          cursor: not-allowed;
-          color: white;
-        }
-      }
-      ```
+  ```scss
+  // file.scss
+  .button {
+    background: #a7ef6f;
+    border-radius: 8px;
+    transition: background-color 0.15s, color 0.15s, opacity 0.15s;
+    cursor: pointer;
+  
+    &:hover {
+      opacity: 0.7;
+      background-color: red;
+    }
+  
+    &:disabled {
+      background: green;
+      cursor: not-allowed;
+      color: white;
+    }
+  }
+  ```
 
 ## To Install Dependencies:
 
