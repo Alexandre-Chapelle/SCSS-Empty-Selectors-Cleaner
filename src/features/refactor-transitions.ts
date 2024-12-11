@@ -1,9 +1,6 @@
 import * as fs from "fs";
-import postcss, {
-  Root,
-  Rule as PostcssRule,
-  Declaration as PostcssDecl,
-} from "postcss";
+import scss from "postcss-scss";
+import { Root, Rule as PostcssRule, Declaration as PostcssDecl } from "postcss";
 import type { FeatureStartPayload, RemovalInfo } from "../types";
 import { log, processFiles } from "../utils";
 import { findScssFiles } from "../utils/dir";
@@ -54,7 +51,7 @@ export class RefactorTransitions {
 
   public processScssFile = async (filePath: string): Promise<RemovalInfo[]> => {
     const content = fs.readFileSync(filePath, "utf-8");
-    const ast: Root = postcss.parse(content, { from: filePath });
+    const ast: Root = scss.parse(content, { from: filePath });
 
     const removals: RemovalInfo[] = [];
     let hasChanges = false;
