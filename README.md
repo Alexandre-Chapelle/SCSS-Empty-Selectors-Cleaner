@@ -1,7 +1,7 @@
 # SCSS-Refactor-Toolkit
 
 ## Feature: scss-clean-unused-selectors
-  ### Before Usage :
+  ### Before Usage:
   
   ```scss
   
@@ -28,7 +28,7 @@
   ```
 
 ## Feature: scss-refactor-transitions
-    ### Before Usage :
+### Before Usage:
   
       ```scss
       
