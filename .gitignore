@@ -177,6 +177,7 @@ dist
 # Test files
 *.css
 *.scss
+*.bak
 
 # Executables, release files
 
